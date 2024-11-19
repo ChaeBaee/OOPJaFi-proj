@@ -1,45 +1,50 @@
 package UMLFinals;
 
 public class Shorts extends Apparels implements DisplayProduct {
-    private boolean isJorts;
-    private boolean isSixPockets;
-    private boolean isMesh;
+    private ShortsStyle shortsStyle;
+    private MaterialUsed materialUsed;;
 
-    public Shorts(String size, String color, String brand, Double price, Boolean isAvailable, int stock, boolean isJorts, boolean isSixPockets, boolean isMesh) {
+    public Shorts(String size, String color, String brand, Double price, Boolean isAvailable, int stock, MaterialUsed materialUsed, ShortsStyle shortsStyle) {
         super(size, color, brand, price, isAvailable, stock);
-        this.isJorts = isJorts;
-        this.isSixPockets = isSixPockets;
-        this.isMesh = isMesh;
+        this.materialUsed = materialUsed;
+        this.shortsStyle = shortsStyle;
     }
 
-    public boolean isJorts() {
-        return isJorts;
+    public MaterialUsed getMaterialUsed() {
+        return materialUsed;
     }
 
-    public void setJorts(boolean jorts) {
-        isJorts = jorts;
+    public void setMaterialUsed(MaterialUsed materialUsed) {
+        this.materialUsed = materialUsed;
     }
 
-    public boolean isSixPockets() {
-        return isSixPockets;
+    public ShortsStyle getShortsStyle() {
+        return shortsStyle;
     }
 
-    public void setSixPockets(boolean sixPockets) {
-        isSixPockets = sixPockets;
+    public void setShortsStyle(ShortsStyle shortsStyle) {
+        this.shortsStyle = shortsStyle;
     }
 
-    public boolean isMesh() {
-        return isMesh;
+    public enum ShortsStyle {
+        SIXPOCKETS,
+        JORTS,
+        MESH;
     }
 
-    public void setMesh(boolean mesh) {
-        isMesh = mesh;
+    public enum MaterialUsed{
+        CANVAS,
+        STRETCH_DENIM,
+        POLYESTER_MESH;
     }
 
     @Override
     public void display() {
-        System.out.println("Jorts: " + this.isJorts);
-        System.out.println("SixPockets: " + this.isSixPockets);
-        System.out.println("Mesh: " + this.isMesh);
+        System.out.println("Color: " + this.getColor());
+        System.out.println("Brand: " + this.getBrand());
+        System.out.println("Price: " + this.getPrice());
+        System.out.println("Size: " + this.getSize());
+        System.out.println("Material Used: " + this.materialUsed);
+        System.out.println("Style: " + this.shortsStyle);
     }
 }

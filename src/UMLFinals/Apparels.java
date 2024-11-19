@@ -1,6 +1,6 @@
 package UMLFinals;
 
-public abstract class Apparels {
+public abstract class Apparels implements DisplayProduct{
     private String size;
     private String color;
     private String brand;
@@ -73,6 +73,13 @@ public abstract class Apparels {
         this.stock = this.stock - quantity;
         return true;
     }
-//gnkakas ko ang inventory stock method
+
+    public void inventoryStock(){
+
+    }
+    @Override
+    public void display(){
+
+    }
 
 }
